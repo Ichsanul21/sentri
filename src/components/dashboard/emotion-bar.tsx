@@ -13,16 +13,17 @@ export function EmotionBarChart({ data }: EmotionBarProps) {
     return <div className="flex items-center justify-center h-40 text-on-dark-muted text-[14px]">No emotion data</div>;
   }
   return (
-    <ResponsiveContainer width="100%" height={200}>
-      <BarChart data={data} layout="vertical" margin={{ left: 80 }}>
+    <ResponsiveContainer width="100%" height={220}>
+      <BarChart data={data} layout="vertical" margin={{ left: 80, top: 10, bottom: 10 }}>
         <XAxis type="number" hide />
         <YAxis
           dataKey="emotion"
           type="category"
           stroke="rgba(255,255,255,0.25)"
-          tick={{ fontSize: 14, fill: "#ffffff" }}
+          tick={{ fontSize: 13, fill: "rgba(255,255,255,0.7)" }}
           tickLine={false}
           axisLine={false}
+          width={75}
         />
         <Tooltip
           contentStyle={{
@@ -30,10 +31,10 @@ export function EmotionBarChart({ data }: EmotionBarProps) {
             border: "1px solid #362d59",
             borderRadius: 6,
             color: "#ffffff",
-            fontSize: 14,
+            fontSize: 13,
           }}
         />
-        <Bar dataKey="count" radius={[0, 6, 6, 0]} barSize={20}>
+        <Bar dataKey="count" radius={[0, 4, 4, 0]} barSize={18}>
           {data.map((_, i) => (
             <Cell key={i} fill={COLORS[i % COLORS.length]} />
           ))}

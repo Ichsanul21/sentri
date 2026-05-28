@@ -52,7 +52,7 @@ export function GeoMap({ data = defaultData, title = "Geographic Distribution" }
               top: `${((90 - point.lat) / 180) * 100}%`,
             }}
           >
-            <div className="w-2 h-2 rounded-full bg-accent-lime shadow-[0_0_6px_rgba(168,255,0,0.6)] group-hover:scale-150 transition-transform" />
+            <div className="w-2 h-2 rounded-full bg-accent-lime shadow-[0_0_6px_rgba(194,239,78,0.6)] group-hover:scale-150 transition-transform" />
             <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-ink-deep border border-hairline-violet px-2 py-1 rounded text-[11px] whitespace-nowrap z-10">
               <span className="font-medium">{point.label}</span>
               <span className="text-on-dark-muted ml-1">{point.count.toLocaleString()}</span>

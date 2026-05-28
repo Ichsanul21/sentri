@@ -15,8 +15,8 @@ export function VolumeChart({ data }: VolumeChartProps) {
     );
   }
   return (
-    <ResponsiveContainer width="100%" height={200}>
-      <AreaChart data={data}>
+    <ResponsiveContainer width="100%" height={220}>
+      <AreaChart data={data} margin={{ top: 10, bottom: 10, left: 10, right: 10 }}>
         <defs>
           <linearGradient id="colorMentions" x1="0" y1="0" x2="0" y2="1">
             <stop offset="5%" stopColor="#c2ef4e" stopOpacity={0.12} />
@@ -27,13 +27,13 @@ export function VolumeChart({ data }: VolumeChartProps) {
         <XAxis
           dataKey="time"
           stroke="rgba(255,255,255,0.25)"
-          tick={{ fontSize: 10, fill: "rgba(255,255,255,0.25)" }}
+          tick={{ fontSize: 11, fill: "rgba(255,255,255,0.5)" }}
           tickLine={false}
           axisLine={false}
         />
         <YAxis
           stroke="rgba(255,255,255,0.25)"
-          tick={{ fontSize: 10, fill: "rgba(255,255,255,0.25)" }}
+          tick={{ fontSize: 11, fill: "rgba(255,255,255,0.5)" }}
           tickLine={false}
           axisLine={false}
         />
@@ -43,7 +43,7 @@ export function VolumeChart({ data }: VolumeChartProps) {
             border: "1px solid #362d59",
             borderRadius: 6,
             color: "#ffffff",
-            fontSize: 14,
+            fontSize: 13,
           }}
         />
         <Area type="monotone" dataKey="mentions" stroke="#c2ef4e" strokeWidth={2} fill="url(#colorMentions)" />

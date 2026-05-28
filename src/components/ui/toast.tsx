@@ -35,10 +35,13 @@ function getToastStyles(variant: ToastVariant): string {
 function ToastItem({ toast, onDismiss }: { toast: Toast; onDismiss: (id: string) => void }) {
   return (
     <div
-      className={`flex items-center gap-3 px-4 py-3 rounded-md shadow-[rgb(21,15,35)_0_0_8px_6px] min-w-[300px] max-w-[420px] animate-slide-in-right ${getToastStyles(toast.variant)}`}
+      className={`flex items-center gap-3 px-4 py-3 rounded-md shadow-[#150f23_0_0_8px_6px] min-w-[300px] max-w-[420px] animate-slide-in-right ${getToastStyles(toast.variant)}`}
     >
       <span className="text-[16px] font-medium leading-[1.5] flex-1">{toast.message}</span>
-      <button onClick={() => onDismiss(toast.id)} className="text-on-dark-muted hover:text-on-primary shrink-0">
+      <button 
+        onClick={() => onDismiss(toast.id)} 
+        className="text-on-dark-muted hover:text-on-primary shrink-0 transition-transform hover:scale-110"
+      >
         <X size={16} />
       </button>
     </div>
@@ -51,6 +54,11 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
   const addToast = useCallback((message: string, variant: ToastVariant = "info") => {
     const id = Math.random().toString(36).slice(2);
     setToasts((prev) => [...prev.slice(-2), { id, message, variant }]);
+    
+    // Auto-dismiss after 5 seconds
+    setTimeout(() => {
+      setToasts((prev) => prev.filter((t) => t.id !== id));
+    }, 5000);
   }, []);
 
   const dismiss = useCallback((id: string) => {

@@ -18,7 +18,7 @@ export function ColorPalettePicker({ value, onChange }: ColorPalettePickerProps)
             <div className="flex items-center gap-2">
               <input
                 type="color"
-                value={value[key] || "#000000"}
+                value={value[key] || "#150f23"}
                 onChange={(e) => onChange({ ...value, [key]: e.target.value })}
                 className="w-10 h-10 rounded cursor-pointer"
               />

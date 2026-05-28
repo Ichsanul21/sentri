@@ -18,7 +18,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
         )}
         <select
           ref={ref}
-          className={`${variantClass} text-[16px] font-medium leading-[1.5] px-3 py-2 rounded-md border border-hairline-cool outline-none transition-all focus:ring-2 focus:ring-ring-focus ${className}`}
+          className={`${variantClass} text-[16px] font-medium leading-[1.5] px-3 py-2 rounded-md border border-hairline-cool outline-none transition-all duration-200 focus:ring-2 focus:ring-ring-focus hover:border-accent-lime/50 ${className}`}
           {...props}
         >
           {options.map((opt) => (

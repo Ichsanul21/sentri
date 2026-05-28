@@ -23,12 +23,11 @@ export function SentimentDonut({ positive, neutral, negative }: DonutProps) {
   const strokeWidth = 20;
   const r = radius - strokeWidth / 2;
   const circ = 2 * Math.PI * r;
-  const halfCirc = circ / 2;
 
   let cumulative = 0;
   const paths = segments.map((seg) => {
-    const length = (seg.value / 100) * halfCirc;
-    const startOffset = halfCirc - cumulative - length;
+    const length = (seg.value / 100) * circ;
+    const startOffset = circ - cumulative - length;
     const path = (
       <circle
         key={seg.label}
@@ -49,21 +48,21 @@ export function SentimentDonut({ positive, neutral, negative }: DonutProps) {
   });
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center justify-center w-full py-2">
       <div className="relative">
         <svg width={radius * 2} height={radius * 2}>
           {paths}
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className="text-[24px] font-semibold leading-[1.25]">{Math.round(dominant.value)}%</span>
-          <span className="text-[14px] leading-[1.43] text-on-dark-muted">{dominant.label}</span>
+          <span className="text-[28px] font-bold leading-[1.25]">{Math.round(dominant.value)}%</span>
+          <span className="text-[13px] leading-[1.43] text-on-dark-muted/80">{dominant.label}</span>
         </div>
       </div>
-      <div className="flex items-center gap-4 mt-2">
+      <div className="flex items-center gap-4 mt-3">
         {segments.map((s) => (
           <div key={s.label} className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full" style={{ backgroundColor: s.color }} />
-            <span className="text-[14px] leading-[1.43] text-on-dark-muted">{s.label}</span>
+            <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: s.color }} />
+            <span className="text-[13px] leading-[1.43] text-on-dark-muted/80">{s.label}</span>
           </div>
         ))}
       </div>

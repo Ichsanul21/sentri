@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 import "./globals.css";
-import { AuthProvider } from "@/contexts/AuthContext";
-import { AppProvider } from "@/contexts/AppContext";
 
 const rubik = Rubik({
   subsets: ["latin"],
@@ -16,13 +15,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${rubik.variable} h-full antialiased`}>
-      <body className="h-full font-sans bg-surface-canvas-dark text-on-primary">
-        <AuthProvider>
-          <AppProvider>
-            {children}
-          </AppProvider>
-        </AuthProvider>
+    <html lang="en" className={`${rubik.variable} h-full antialiased`} suppressHydrationWarning>
+      <body className="h-full font-sans bg-surface-canvas-dark text-on-primary transition-colors duration-300">
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

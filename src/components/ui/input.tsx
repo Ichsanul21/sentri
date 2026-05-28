@@ -14,7 +14,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         )}
         <input
           ref={ref}
-          className={`bg-surface-canvas-light text-ink-deep text-[16px] font-medium leading-[1.5] px-3 py-2 rounded-[6px] border border-hairline-cool outline-none transition-all focus:shadow-[inset_0_2px_10px_rgba(0,0,0,0.15)] focus:ring-2 focus:ring-ring-focus ${error ? "border-sentiment-negative" : ""} ${className}`}
+          className={`bg-surface-canvas-light text-ink-deep text-[16px] font-medium leading-[1.5] px-3 py-2 rounded-[6px] border border-hairline-cool outline-none transition-all duration-200 focus:shadow-[inset_0_2px_10px_rgba(0,0,0,0.15)] focus:ring-2 focus:ring-ring-focus hover:border-accent-lime/50 ${error ? "border-sentiment-negative" : ""} ${className}`}
           {...props}
         />
         {error && (
@@ -39,7 +39,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         )}
         <textarea
           ref={ref}
-          className={`bg-surface-night text-on-primary text-[16px] font-medium leading-[1.5] rounded-md border border-hairline-violet p-4 outline-none transition-all focus:ring-2 focus:ring-ring-focus resize-none min-h-[120px] ${className}`}
+          className={`bg-surface-canvas-light text-ink-deep text-[16px] font-medium leading-[1.5] rounded-md border border-hairline-cool p-4 outline-none transition-all duration-200 focus:ring-2 focus:ring-ring-focus hover:border-accent-lime/50 resize-none min-h-[120px] ${className}`}
           {...props}
         />
       </div>

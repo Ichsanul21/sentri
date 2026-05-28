@@ -38,7 +38,7 @@ export function SentimentTimeline() {
           const x = (volumeData.indexOf(d) / (volumeData.length - 1)) * 100;
           return (
             <g key={d.time}>
-              <line x1={x} y1="0" x2={x} y2="100" stroke="#2a2440" strokeWidth="0.3" />
+              <line x1={x} y1="0" x2={x} y2="100" stroke="#362d59" strokeWidth="0.3" />
               <text x={x} y="105" textAnchor="middle" fill="#8b8b9e" fontSize="3.5">
                 {d.time}
               </text>

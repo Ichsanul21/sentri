@@ -23,11 +23,11 @@ export function Dialog({ open, onClose, children, className = "" }: DialogProps)
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
-      <div className="absolute inset-0 bg-black/50" onClick={onClose} />
+    <div className="fixed inset-0 z-50 flex items-center justify-center animate-fade-in">
+      <div className="absolute inset-0 bg-black/50 animate-fade-in" onClick={onClose} />
       <div
         ref={ref}
-        className={`relative bg-surface-night border border-hairline-violet rounded-xl p-8 shadow-[rgba(0,0,0,0.1)_0_10px_15px_-3px,rgba(0,0,0,0.1)_0_4px_6px_-4px] max-w-lg w-full mx-4 max-h-[90vh] overflow-y-auto ${className}`}
+        className={`relative bg-surface-night border border-hairline-violet rounded-xl p-8 shadow-[rgba(0,0,0,0.1)_0_10px_15px_-3px,rgba(0,0,0,0.1)_0_4px_6px_-4px] max-w-lg w-full mx-4 max-h-[90vh] overflow-y-auto animate-scale-in ${className}`}
       >
         {children}
       </div>

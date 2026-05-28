@@ -25,7 +25,7 @@ const variantClasses: Record<BadgeVariant, string> = {
 export function Badge({ variant = "default", dot = false, className = "", children, ...props }: BadgeProps) {
   return (
     <span
-      className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-semibold leading-[1.8] tracking-[0.25px] ${variantClasses[variant]} ${className}`}
+      className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-semibold leading-[1.8] tracking-[0.25px] transition-all duration-200 hover:scale-105 ${variantClasses[variant]} ${className}`}
       {...props}
     >
       {dot && <span className="w-1.5 h-1.5 rounded-full currentColor" />}

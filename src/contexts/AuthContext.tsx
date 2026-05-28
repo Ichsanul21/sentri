@@ -29,8 +29,10 @@ const STORAGE_KEY = "sentri_auth";
 const USERS_KEY = "sentri_users";
 
 const defaultUsers: User[] = [
-  { id: "admin-1", name: "Admin", email: "admin@sentri.com", company: "Sentri Inc.", role: "super_admin" },
-  { id: "manager-1", name: "Manager", email: "manager@sentri.com", company: "Sentri Inc.", role: "manager" },
+  { id: "admin-1", name: "Admin User", email: "admin@sentri.com", company: "Sentri Inc.", role: "super_admin" },
+  { id: "manager-1", name: "Manager User", email: "manager@sentri.com", company: "Sentri Inc.", role: "manager" },
+  { id: "analyst-1", name: "Analyst User", email: "analyst@sentri.com", company: "Sentri Inc.", role: "analyst" },
+  { id: "viewer-1", name: "Viewer User", email: "viewer@client.com", company: "Client Corp.", role: "viewer" },
 ];
 
 export function AuthProvider({ children }: { children: ReactNode }) {
@@ -57,7 +59,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
     setUsers(allUsers);
     setUser(found);
-    return { success: true };
+    
+    // Set auth cookie for middleware
+    document.cookie = `sentri_auth=${found.id}; path=/; max-age=604800`; // 7 days
+    
+    // Get callback URL from localStorage or default to dashboard
+    const callbackUrl = localStorage.getItem("callback_url") || "/dashboard/executive-summary";
+    localStorage.removeItem("callback_url");
+    
+    return { success: true, redirectTo: callbackUrl };
   }, []);
 
   const register = useCallback(async (name: string, email: string, password: string) => {
@@ -83,6 +93,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const logout = useCallback(() => {
     setUser(null);
     removeItem(STORAGE_KEY);
+    // Clear auth cookie
+    document.cookie = "sentri_auth=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT";
     router.push("/auth/login");
   }, [router]);
 

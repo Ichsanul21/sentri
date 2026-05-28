@@ -17,8 +17,8 @@ export function BrandHealthGauge({ score, size = "default", label = "Brand Healt
   const color = progress >= 70 ? "#c2ef4e" : progress >= 40 ? "#8b8b9e" : "#e8594c";
 
   return (
-    <div className={`flex flex-col items-center ${size === "compact" ? "gap-1" : "gap-2"}`}>
-      <svg width={radius * 2} height={radius + 20} className="transform -rotate-90">
+    <div className={`relative flex flex-col items-center ${size === "compact" ? "gap-1" : "gap-2"}`}>
+      <svg width={radius * 2} height={radius * 2 + 10} className="transform">
         <path
           d={`M ${strokeWidth / 2} ${radius} A ${normalizedRadius} ${normalizedRadius} 0 0 1 ${radius * 2 - strokeWidth / 2} ${radius}`}
           fill="none"
@@ -37,15 +37,15 @@ export function BrandHealthGauge({ score, size = "default", label = "Brand Healt
           className="transition-all duration-1000 ease-out"
         />
       </svg>
-      <div className={`absolute flex flex-col items-center justify-center ${size === "compact" ? "mt-4" : "mt-6"}`}
-        style={{ width: radius * 2, height: radius }}
+      <div className="absolute inset-0 flex flex-col items-center justify-center"
+        style={{ marginTop: size === "compact" ? "20px" : "40px" }}
       >
-        <span className={`font-bold leading-[1.1] ${size === "compact" ? "text-[30px]" : "text-[60px]"}`}
+        <span className={`font-bold leading-[1.1] ${size === "compact" ? "text-[30px]" : "text-[56px]"}`}
           style={{ color }}
         >
           {progress}
         </span>
-        <span className="text-[14px] leading-[1.43] text-on-dark-muted">{label}</span>
+        <span className="text-[12px] leading-[1.43] text-on-dark-muted/80">{label}</span>
       </div>
     </div>
   );

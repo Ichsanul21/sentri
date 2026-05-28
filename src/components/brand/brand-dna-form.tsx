@@ -134,7 +134,7 @@ export function BrandDnaForm({ onSubmit, initial }: BrandDnaFormProps) {
               if (step < steps.length - 1) setStep(step + 1);
               else onSubmit(form);
             }}
-            className="px-4 py-1.5 rounded-md bg-on-primary text-ink-deep text-[14px] font-bold leading-[1.14] uppercase tracking-[0.2px] transition-all hover:bg-surface-press-light shadow-[rgb(21,15,35)_0_0_8px_6px]"
+            className="px-4 py-1.5 rounded-md bg-on-primary text-ink-deep text-[14px] font-bold leading-[1.14] uppercase tracking-[0.2px] transition-all hover:bg-surface-press-light shadow-[#150f23_0_0_8px_6px]"
           >
             {step < steps.length - 1 ? "Next" : "Save"}
           </button>
