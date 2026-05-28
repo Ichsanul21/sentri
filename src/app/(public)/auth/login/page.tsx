@@ -31,10 +31,10 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="bg-surface-canvas-light rounded-[12px] border border-hairline-cloud shadow-[rgba(0,0,0,0.1)_0_10px_15px_-3px,rgba(0,0,0,0.1)_0_4px_6px_-4px] p-8 space-y-6 animate-scale-in">
+    <div className="bg-surface-night rounded-[12px] border border-hairline-violet shadow-[rgba(0,0,0,0.1)_0_10px_15px_-3px,rgba(0,0,0,0.1)_0_4px_6px_-4px] p-8 space-y-6 animate-scale-in">
       <div className="text-center space-y-2 animate-fade-in-down">
-        <h1 className="text-[30px] font-medium leading-[1.2] text-ink-deep">Masuk</h1>
-        <p className="text-[16px] text-ink-deep/60">Selamat datang kembali di Sentri</p>
+        <h1 className="text-[30px] font-medium leading-[1.2]">Masuk</h1>
+        <p className="text-[16px] text-on-dark-muted">Selamat datang kembali di Sentri</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4 animate-fade-in-up">
@@ -45,20 +45,20 @@ export default function LoginPage() {
         )}
 
         <div className="flex flex-col gap-1.5">
-          <label className="text-[16px] font-medium leading-[1.5] text-ink-deep">Email</label>
+          <label className="text-[16px] font-medium leading-[1.5] text-on-primary">Email</label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="nama@perusahaan.com"
-            className="bg-surface-canvas-light text-ink-deep text-[16px] font-medium leading-[1.5] px-3 py-2 rounded-[6px] border border-hairline-cool outline-none transition-all focus:shadow-[inset_0_2px_10px_rgba(0,0,0,0.15)] focus:ring-2 focus:ring-ring-focus"
+            className="bg-surface-canvas-dark text-on-primary text-[16px] font-medium leading-[1.5] px-3 py-2 rounded-[6px] border border-hairline-violet outline-none transition-all focus:shadow-[inset_0_2px_10px_rgba(0,0,0,0.15)] focus:ring-2 focus:ring-ring-focus"
           />
         </div>
 
         <div className="flex flex-col gap-1.5">
           <div className="flex items-center justify-between">
-            <label className="text-[16px] font-medium leading-[1.5] text-ink-deep">Kata Sandi</label>
-            <Link href="/auth/forgot-password" className="text-[14px] text-accent-violet underline underline-offset-2">
+            <label className="text-[16px] font-medium leading-[1.5] text-on-primary">Kata Sandi</label>
+            <Link href="/auth/forgot-password" className="text-[14px] text-accent-lime underline underline-offset-2">
               Lupa kata sandi?
             </Link>
           </div>
@@ -67,7 +67,7 @@ export default function LoginPage() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="••••••••"
-            className="bg-surface-canvas-light text-ink-deep text-[16px] font-medium leading-[1.5] px-3 py-2 rounded-[6px] border border-hairline-cool outline-none transition-all focus:shadow-[inset_0_2px_10px_rgba(0,0,0,0.15)] focus:ring-2 focus:ring-ring-focus"
+            className="bg-surface-canvas-dark text-on-primary text-[16px] font-medium leading-[1.5] px-3 py-2 rounded-[6px] border border-hairline-violet outline-none transition-all focus:shadow-[inset_0_2px_10px_rgba(0,0,0,0.15)] focus:ring-2 focus:ring-ring-focus"
           />
         </div>
 
@@ -77,26 +77,26 @@ export default function LoginPage() {
         </Button>
       </form>
 
-      <p className="text-center text-[14px] text-ink-deep/60">
+      <p className="text-center text-[14px] text-on-dark-muted">
         Belum punya akun?{" "}
-        <Link href="/auth/register" className="text-accent-violet underline underline-offset-2 font-medium">
+        <Link href="/auth/register" className="text-accent-lime underline underline-offset-2 font-medium">
           Daftar
         </Link>
       </p>
 
-      <div className="pt-2 border-t border-hairline-cloud animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-        <p className="text-[12px] text-ink-deep/40 text-center mb-2">Demo Accounts (password: password)</p>
-        <div className="flex flex-col gap-1 text-[12px] text-ink-deep/50">
-          <button onClick={() => { setEmail("admin@sentri.com"); setPassword("password"); }} className="hover:text-ink-deep transition-all duration-200 hover:translate-x-1 text-left">
+      <div className="pt-2 border-t border-hairline-violet/30 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+        <p className="text-[12px] text-on-dark-muted/40 text-center mb-2">Demo Accounts (password: password)</p>
+        <div className="flex flex-col gap-1 text-[12px] text-on-dark-muted/50">
+          <button onClick={() => { setEmail("admin@sentri.com"); setPassword("password"); }} className="hover:text-on-primary transition-all duration-200 hover:translate-x-1 text-left">
             admin@sentri.com (Super Admin - Full Access)
           </button>
-          <button onClick={() => { setEmail("manager@sentri.com"); setPassword("password"); }} className="hover:text-ink-deep transition-all duration-200 hover:translate-x-1 text-left">
+          <button onClick={() => { setEmail("manager@sentri.com"); setPassword("password"); }} className="hover:text-on-primary transition-all duration-200 hover:translate-x-1 text-left">
             manager@sentri.com (Manager - Brand Management)
           </button>
-          <button onClick={() => { setEmail("analyst@sentri.com"); setPassword("password"); }} className="hover:text-ink-deep transition-all duration-200 hover:translate-x-1 text-left">
+          <button onClick={() => { setEmail("analyst@sentri.com"); setPassword("password"); }} className="hover:text-on-primary transition-all duration-200 hover:translate-x-1 text-left">
             analyst@sentri.com (Analyst - Limited Write)
           </button>
-          <button onClick={() => { setEmail("viewer@client.com"); setPassword("password"); }} className="hover:text-ink-deep transition-all duration-200 hover:translate-x-1 text-left">
+          <button onClick={() => { setEmail("viewer@client.com"); setPassword("password"); }} className="hover:text-on-primary transition-all duration-200 hover:translate-x-1 text-left">
             viewer@client.com (Viewer - Read Only)
           </button>
         </div>

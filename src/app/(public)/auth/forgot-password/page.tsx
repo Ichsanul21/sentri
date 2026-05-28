@@ -8,10 +8,10 @@ export default function ForgotPasswordPage() {
   const [email, setEmail] = useState("");
 
   return (
-    <div className="bg-surface-canvas-light rounded-[12px] border border-hairline-cloud shadow-[rgba(0,0,0,0.1)_0_10px_15px_-3px,rgba(0,0,0,0.1)_0_4px_6px_-4px] p-8 space-y-6">
+    <div className="bg-surface-night rounded-[12px] border border-hairline-violet p-8 space-y-6">
       <div className="text-center space-y-2">
-        <h1 className="text-[30px] font-medium leading-[1.2] text-ink-deep">Lupa Kata Sandi</h1>
-        <p className="text-[16px] text-ink-deep/60">
+        <h1 className="text-[30px] font-medium leading-[1.2]">Lupa Kata Sandi</h1>
+        <p className="text-[16px] text-on-dark-muted">
           Masukkan email Anda dan kami akan mengirimkan tautan reset
         </p>
       </div>
@@ -21,13 +21,13 @@ export default function ForgotPasswordPage() {
         className="space-y-4"
       >
         <div className="flex flex-col gap-1.5">
-          <label className="text-[16px] font-medium leading-[1.5] text-ink-deep">Email</label>
+          <label className="text-[16px] font-medium leading-[1.5] text-on-primary">Email</label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="nama@perusahaan.com"
-            className="bg-surface-canvas-light text-ink-deep text-[16px] font-medium leading-[1.5] px-3 py-2 rounded-[6px] border border-hairline-cool outline-none transition-all focus:shadow-[inset_0_2px_10px_rgba(0,0,0,0.15)] focus:ring-2 focus:ring-ring-focus"
+            className="bg-surface-canvas-dark text-on-primary text-[16px] font-medium leading-[1.5] px-3 py-2 rounded-[6px] border border-hairline-violet outline-none transition-all focus:shadow-[inset_0_2px_10px_rgba(0,0,0,0.15)] focus:ring-2 focus:ring-ring-focus"
           />
         </div>
 
@@ -36,8 +36,8 @@ export default function ForgotPasswordPage() {
         </Button>
       </form>
 
-      <p className="text-center text-[14px] text-ink-deep/60">
-        <Link href="/auth/login" className="text-accent-violet underline underline-offset-2 font-medium">
+      <p className="text-center text-[14px] text-on-dark-muted">
+        <Link href="/auth/login" className="text-accent-lime underline underline-offset-2 font-medium">
           Kembali ke Masuk
         </Link>
       </p>
