@@ -1,0 +1,53 @@
+Daftar lengkap fiturnya yang dibagi ke dalam 6 kategori utama:
+
+### 1. Brand Identity & Profiling Module (Modul Inti Merek)
+
+Kategori ini adalah pondasi di mana klien mendefinisikan "siapa" mereka agar AI memiliki standar acuan.
+
+* **Brand DNA Setup:** Form input untuk mendaftarkan nama *brand*, logo, *tagline*, palet warna utama, dan target demografis.
+* **Tone & Voice Matrix:** Pengaturan gaya komunikasi (misal: formal, kasual, berwibawa, enerjik) yang menjadi acuan AI dalam menganalisis konten.
+* **Competitor Radar Setup:** Fitur untuk memasukkan 3-5 kompetitor utama untuk dilacak dan dibandingkan secara *head-to-head*.
+* **Keyword & Hashtag Tracker:** Pengaturan kata kunci spesifik, nama produk, atau *hashtag* kampanye yang ingin di-crawling oleh sistem secara spesifik.
+
+### 2. AI & Sentiment Engine (Modul Kecerdasan Buatan)
+
+Kategori ini merupakan "otak" dari sistem yang memproses data mentah dari internet.
+
+* **Real-Time Social Listening:** Penarikan data percakapan dari berbagai platform (Instagram, X, TikTok, Facebook, Google Reviews, portal berita).
+* **NLP Sentiment Analyzer:** Kategorisasi emosi audiens secara otomatis (Positif, Negatif, Netral) serta deteksi emosi sekunder (Marah, Senang, Kecewa, Antusias).
+* **Brand Association Extractor:** AI mengidentifikasi kata sifat apa yang paling sering dikaitkan oleh netizen dengan *brand* (misal: "mahal", "awet", "pelayanan buruk").
+* **Visual & Aesthetic Scoring:** AI mendeteksi apakah aset visual yang diunggah *brand* (atau *user-generated content*) sejalan dengan warna dan estetika *premium* yang diatur di awal.
+
+### 3. Early Warning System (EWS) & Crisis Control
+
+Sangat krusial untuk mencegah krisis PR (*Public Relations*). Sistem akan bertindak sebagai alarm keamanan merek.
+
+* **Anomaly Spike Detection:** AI mendeteksi jika ada lonjakan drastis pada penyebutan merek atau produk, khususnya yang bersentimen negatif.
+* **Real-Time Crisis Alerts:** Notifikasi langsung via WhatsApp, Email, atau *push notification dashboard* saat *threshold* sentimen negatif terlewati (misal: >20% negatif dalam 1 jam).
+* **Triage & Source Tracing:** Fitur untuk melacak dari mana "sumber api" krisis bermula (misal: menemukan *tweet* atau video TikTok spesifik yang pertama kali viral).
+* **Auto-Response Suggestions:** AI meng-generate rekomendasi draf respons krisis (*Press Release* atau balasan komentar) dengan *tone* yang menenangkan dan sesuai *Brand DNA*.
+
+### 4. Strategy & Recommendation Engine (Modul Konsultan AI)
+
+Sistem tidak hanya membaca data, tapi memberikan *action plan*.
+
+* **Content Tone Checker:** Sebelum tim klien *posting* di media sosial, mereka bisa memasukkan draf teks ke sini untuk dicek apakah sudah sesuai dengan *brand voice*.
+* **Campaign Optimizer:** Rekomendasi jenis konten apa yang harus dibuat minggu depan berdasarkan apa yang paling disukai audiens minggu ini.
+* **Audience Persona Matcher:** AI mengevaluasi apakah interaksi yang terjadi saat ini sudah sesuai dengan target demografis yang diatur di Modul 1.
+
+### 5. Command Center & Data Visualization (Modul Dashboard)
+
+Tampilan UI/UX *high-end* tempat eksekutif dan manajer melihat ringkasan bisnis.
+
+* **Executive Summary Dashboard:** Tampilan utama interaktif (*drag-and-drop widget*) yang menampilkan metrik paling penting (Skor Kesehatan Merek, Volume Percakapan, Sentimen Dominan).
+* **Competitor Benchmarking Matrix:** Grafik perbandingan *share of voice* dan sentimen antara klien dengan kompetitornya dalam satu layar.
+* **Geospatial Brand Heatmap:** Peta interaktif (seperti peta regional) yang menunjukkan dari kota atau wilayah mana sentimen positif atau negatif paling banyak berasal.
+* **Automated Report Generator:** Tombol satu klik untuk mengekspor data menjadi laporan presentasi (PDF/PPT/Excel) dengan kop surat dan *branding* klien.
+
+### 6. User & System Administration
+
+Modul operasional untuk menjaga keamanan dan manajemen akun.
+
+* **Role-Based Access Control (RBAC):** Pembagian hak akses (Super Admin, Manager, Analyst, Viewer).
+* **API & Integration Hub:** Pengaturan koneksi API ke platform media sosial atau sistem CRM internal perusahaan.
+* **Subscription & Billing Management:** Tampilan untuk mengatur paket berlangganan klien (SaaS Tiering), sisa kuota pencarian kata kunci, dan riwayat tagihan.
